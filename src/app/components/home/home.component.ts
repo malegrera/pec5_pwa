@@ -9,11 +9,12 @@ import { ImagesService } from 'src/app/services/images.service';
 })
 export class HomeComponent implements OnInit {
   images: Image[] = [];
-  loading: boolean = true;
+  loading: boolean=true;
   displayedColumns: string[] = ['imageId', 'author'];
   constructor(private imagesService: ImagesService) {}
 
   ngOnInit(): void {
+    this.loading=true;
     this.imagesService.getAllImages().subscribe({
       next: (images) => (this.images = images),
       error: (error) => console.log(error),

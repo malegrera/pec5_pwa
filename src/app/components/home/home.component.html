@@ -7,13 +7,16 @@
   </mat-progress-spinner>
 </div>
 
-<div class="container">
+
+  
+<div class="buttons">
   <h1>Images</h1>
-  <mat-button-toggle-group #vista="matButtonToggleGroup" aria-label="Vista" value="tabla" class="buttons">
+  <mat-button-toggle-group #vista="matButtonToggleGroup" aria-label="Vista" value="tabla" >
     <mat-button-toggle value="tabla"> <mat-icon>list</mat-icon></mat-button-toggle>
     <mat-button-toggle value="cards"><mat-icon>apps</mat-icon></mat-button-toggle>
   </mat-button-toggle-group>
-
+</div>
+  <div class="container">
   <div *ngIf="vista.value=='tabla'">
     <table mat-table [dataSource]="images" class="mat-elevation-z8">
       <ng-container matColumnDef="imageId">
