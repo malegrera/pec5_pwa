@@ -7,20 +7,23 @@
     aria-label="Vista"
     [value]="valor"
   >
-  <mat-button-toggle value="cards"
-  ><mat-icon>grid_view</mat-icon></mat-button-toggle
->
-    <mat-button-toggle value="tabla">
-      <mat-icon>view_list</mat-icon></mat-button-toggle
-    >
-
+    <mat-button-toggle value="cards" aria-label="Vista cards">
+      <mat-icon>grid_view</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="tabla" aria-label="Vista tabla">
+      <mat-icon>view_list</mat-icon>
+    </mat-button-toggle>
   </mat-button-toggle-group>
 </header>
-<main >
+<main>
   <div *ngIf="vista.value == 'tabla'" class="container_table">
     <app-grid [images]="images" (detail)="detail($event)"></app-grid>
   </div>
   <div *ngIf="vista.value == 'cards'" class="container_card">
-    <app-card *ngFor="let image of images" [image]="image" (click)="detail(image.id)"></app-card>
+    <app-card
+      *ngFor="let image of images"
+      [image]="image"
+      (click)="detail(image.id)"
+    ></app-card>
   </div>
 </main>
