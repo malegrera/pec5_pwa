@@ -12,7 +12,8 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
-        ]
+        ],
+        "urls": ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"]
       }
     },
     {
@@ -34,9 +35,9 @@
         "https://picsum.photos/**"
       ],
       "cacheConfig": {
-        "maxSize": 10,
-        "maxAge": "1h",
-        "timeout": "1s",
+        "maxSize": 20,
+        "maxAge": "2h",
+        "timeout": "2s",
         "strategy": "freshness"
       }
     }
