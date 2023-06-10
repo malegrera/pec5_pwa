@@ -18,7 +18,7 @@
 </header>
 <main >
   <div *ngIf="vista.value == 'tabla'" class="container_table">
-    <app-grid [images]="images"></app-grid>
+    <app-grid [images]="images" (detail)="detail($event)"></app-grid>
   </div>
   <div *ngIf="vista.value == 'cards'" class="container_card">
     <app-card *ngFor="let image of images" [image]="image" (click)="detail(image.id)"></app-card>

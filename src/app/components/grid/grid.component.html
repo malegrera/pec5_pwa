@@ -2,27 +2,27 @@
   <ng-container matColumnDef="imageId">
     <th *matHeaderCellDef>Image Id</th>
     <td *matCellDef="let image">
-      <a [routerLink]="['/detail', image.id]">{{ image.id }}</a>
+      {{ image.id }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="author">
     <th *matHeaderCellDef>Author</th>
     <td class="description-cell" *matCellDef="let image" >
-      <a [routerLink]="['/detail', image.id]"> {{ image.author }} </a>
+       {{ image.author }} 
     </td>
   </ng-container>
   <ng-container matColumnDef="image">
     <th *matHeaderCellDef>Image</th>
     <td class="description-cell" *matCellDef="let image" >
-      <a [routerLink]="['/detail', image.id]">
+     
         <img
           src="{{ image.download_url }}"
           alt="foto de ejemplo"
           style="width: 2vw"
-      /></a>
+      />
     </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns" class="animate__animated animate__rubberBand" ></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns" class="animate__animated animate__rubberBand" (click)="emite(row.id)" ></tr>
 </table>
