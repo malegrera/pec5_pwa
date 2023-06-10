@@ -1,0 +1,26 @@
+<app-spinner *ngIf="loading"></app-spinner>
+
+<header class="buttons">
+  <h1>Images</h1>
+  <mat-button-toggle-group
+    #vista="matButtonToggleGroup"
+    aria-label="Vista"
+    [value]="valor"
+  >
+  <mat-button-toggle value="cards"
+  ><mat-icon>grid_view</mat-icon></mat-button-toggle
+>
+    <mat-button-toggle value="tabla">
+      <mat-icon>view_list</mat-icon></mat-button-toggle
+    >
+
+  </mat-button-toggle-group>
+</header>
+<main >
+  <div *ngIf="vista.value == 'tabla'" class="container_table">
+    <app-grid [images]="images"></app-grid>
+  </div>
+  <div *ngIf="vista.value == 'cards'" class="container_card">
+    <app-card *ngFor="let image of images" [image]="image" (click)="detail(image.id)"></app-card>
+  </div>
+</main>

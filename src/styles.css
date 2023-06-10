@@ -2,3 +2,48 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+    box-sizing: border-box;
+}
+.container_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3vmax;
+}
+
+.container_table {
+    width: 80vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.campo {
+    width: 100%;
+}
+.ancho {
+    width: 80vw;
+}
+.btn {
+    text-align: center;
+}
+
+@media (min-width: 650px) {
+    .ancho {
+        width: 50vw;
+    }
+  }
+
+  @media (min-width: 950px) {
+    .ancho {
+        width: 30vw;
+    }
+  }

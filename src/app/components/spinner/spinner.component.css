@@ -10,15 +10,4 @@
     left: 0;
     right: 0;
     z-index: 10;
-
-}
-.container {
-    width: 60%;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
 }

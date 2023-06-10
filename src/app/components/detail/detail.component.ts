@@ -2,20 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Image } from 'src/app/models/image.interface';
 import { ImagesService } from 'src/app/services/images.service';
+
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent {
-  image: Image = {
-    id: '',
-    author: '',
-    width: 0,
-    height: 0,
-    url: '',
-    download_url: '',
-  };
+  image!: Image ;
+  texto="Show all details";
+  
   constructor(
     private imagesService: ImagesService,
     private activatedRoute: ActivatedRoute,
@@ -32,7 +29,6 @@ export class DetailComponent {
           return this.router.navigateByUrl('/');
         }
         this.image = image;
-        console.log(this.image);
         return this.image;
       });
   }
