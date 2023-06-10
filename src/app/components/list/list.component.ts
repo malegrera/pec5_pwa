@@ -10,19 +10,19 @@ import { ImagesService } from 'src/app/services/images.service';
 })
 export class ListComponent implements OnInit {
   images: Image[] = [];
-  loading: boolean=true;
-  valor='cards';
-  constructor(private imagesService: ImagesService,private router: Router) {}
+  loading: boolean = true;
+  valor = 'cards';
+  constructor(private imagesService: ImagesService, private router: Router) {}
 
   ngOnInit(): void {
-    this.loading=true;
+    this.loading = true;
     this.imagesService.getAllImages().subscribe({
       next: (images) => (this.images = images),
       error: (error) => console.log(error),
       complete: () =>
         setTimeout(() => {
           this.loading = false;
-        }, 1000),
+        }, 500),
     });
   }
 
