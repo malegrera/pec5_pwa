@@ -1,25 +1,25 @@
-<table mat-table [dataSource]="images" class="mat-elevation-z8">
-  <ng-container matColumnDef="imageId">
-    <th *matHeaderCellDef>Image Id</th>
-    <td *matCellDef="let image">
-      {{ image.id }}
+<table mat-table [dataSource]="results" class="mat-elevation-z8">
+  <ng-container matColumnDef="movieId">
+    <th *matHeaderCellDef>Movie Id</th>
+    <td *matCellDef="let result">
+      {{ result.id }}
     </td>
   </ng-container>
 
-  <ng-container matColumnDef="author">
-    <th *matHeaderCellDef>Author</th>
-    <td class="description-cell" *matCellDef="let image" >
-       {{ image.author }} 
+  <ng-container matColumnDef="title">
+    <th *matHeaderCellDef>Title</th>
+    <td class="description-cell" *matCellDef="let result" >
+       {{ result.title }} 
     </td>
   </ng-container>
   <ng-container matColumnDef="image">
     <th *matHeaderCellDef>Image</th>
-    <td class="description-cell" *matCellDef="let image" >
+    <td class="description-cell" *matCellDef="let result" >
      
         <img
-          src="{{ image.download_url }}"
-          alt="foto de ejemplo"
-          style="width: 2vw"
+          src="https://image.tmdb.org/t/p/w500{{result.backdrop_path}}"
+          alt="{{ result.backdrop_path }}"
+          style="width: 3vw"
       />
     </td>
   </ng-container>

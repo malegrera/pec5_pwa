@@ -1,35 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Image } from 'src/app/models/image.interface';
-import { ImagesService } from 'src/app/services/images.service';
-
+import { Movies,Result } from 'src/app/models/movies.interface';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent {
-  image!: Image ;
-  texto="Show all details";
-  
+  result!: Result;
+  texto = 'Show all details';
+
   constructor(
-    private imagesService: ImagesService,
+    private moviesService: MoviesService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     const identifier = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log('identifier--->', identifier);
 
     if (identifier != null)
-      this.imagesService.getImageById(identifier).subscribe((image) => {
-        if (!image) {
+      this.moviesService.getMovieById(identifier).subscribe((result) => {
+        if (!result) {
           return this.router.navigateByUrl('/');
         }
-        this.image = image;
-        return this.image;
+        this.result = result;
+        return this.result;
       });
   }
 }

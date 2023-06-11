@@ -1,14 +1,13 @@
 <mat-card class="card mat-elevation-z4" [@fadeInOutScale]>
   <mat-card-content class="content">
-    <h2>ImageId: {{ image.id }}</h2>
+    <h2>Movie Id: {{ result.id }}</h2>
     <div class="matcontent">
       <img
-        src="{{ image.download_url }}"
-        alt="foto de ejemplo"
-        style="width: 2vw"
+        src="https://image.tmdb.org/t/p/w500{{result.backdrop_path}}"
+        alt="{{ result.backdrop_path }}"
         class="animate__animated animate__bounce animate__shakeX"
       />
-      <p>Author: {{ image.author }}</p>
+      <p>Title: {{ result.title }}</p>
     </div>
   </mat-card-content>
 </mat-card>

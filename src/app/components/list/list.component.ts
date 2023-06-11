@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Image } from 'src/app/models/image.interface';
-import { ImagesService } from 'src/app/services/images.service';
+import { Movies,Result } from 'src/app/models/movies.interface';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-list',
@@ -9,15 +9,15 @@ import { ImagesService } from 'src/app/services/images.service';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
-  images: Image[] = [];
+  movies!: Movies;
   loading: boolean = true;
   valor = 'cards';
-  constructor(private imagesService: ImagesService, private router: Router) {}
+  constructor(private MoviesService: MoviesService, private router: Router) {}
 
   ngOnInit(): void {
     this.loading = true;
-    this.imagesService.getAllImages().subscribe({
-      next: (images) => (this.images = images),
+    this.MoviesService.getAllMovies().subscribe({
+      next: (movies) => this.movies=movies,
       error: (error) => console.log(error),
       complete: () =>
         setTimeout(() => {
@@ -26,7 +26,7 @@ export class ListComponent implements OnInit {
     });
   }
 
-  detail(img: string) {
-    this.router.navigateByUrl(`detail/${img}`);
+  detail(id: string) {
+    this.router.navigateByUrl(`detail/${id}`);
   }
 }

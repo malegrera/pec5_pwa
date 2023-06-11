@@ -1,8 +1,12 @@
-import { Component, Input } from '@angular/core';
 import {
-  animate, state, style, transition, trigger,
-} from '@angular/animations'
-import { Image } from 'src/app/models/image.interface';
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { Component, Input } from '@angular/core';
+import { Movies,Result } from 'src/app/models/movies.interface';
 
 @Component({
   selector: 'app-card',
@@ -10,13 +14,11 @@ import { Image } from 'src/app/models/image.interface';
   styleUrls: ['./card.component.css'],
   animations: [
     trigger('fadeInOutScale', [
-      state('void', style({opacity: 0, transform: 'scale(0.5)'})), 
-      transition('void <=>*', animate(2000))
-    ])
-  ]
+      state('void', style({ opacity: 0, transform: 'scale(0.5)' })),
+      transition('void <=>*', animate(2000)),
+    ]),
+  ],
 })
 export class CardComponent {
-  @Input() image!: Image;
-
-
+  @Input() result!: Result;
 }

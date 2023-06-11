@@ -1,6 +1,7 @@
 
 tr:hover {
     background-color: var(--fondotransp) !important;
+    cursor: pointer;
 }
 
 tr:nth-child(even) {
@@ -10,3 +11,4 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: transparent;
 }
+
