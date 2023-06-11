@@ -16,10 +16,10 @@
   </mat-button-toggle-group>
 </header>
 <main>
-  <div *ngIf="vista.value == 'tabla'" class="container_table">
+  <div *ngIf="vista.value == 'tabla' && movies?.results" class="container_table">
     <app-grid [results]="movies.results" (detail)="detail($event)"></app-grid>
   </div>
-  <div *ngIf="vista.value == 'cards'" class="container_card">
+  <div *ngIf="vista.value == 'cards' && movies?.results" class="container_card">
     <app-card
       *ngFor="let result of movies.results"
       [result]="result"
