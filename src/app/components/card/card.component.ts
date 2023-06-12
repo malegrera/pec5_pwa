@@ -6,7 +6,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, Input } from '@angular/core';
-import { Movies,Result } from 'src/app/models/movies.interface';
+import { Result } from 'src/app/models/movies.interface';
 
 @Component({
   selector: 'app-card',

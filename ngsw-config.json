@@ -13,7 +13,9 @@
           "/*.css",
           "/*.js"
         ],
-        "urls": ["https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"]
+        "urls": [
+          "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        ]
       }
     },
     {
@@ -31,12 +33,10 @@
   "dataGroups": [
     {
       "name": "movies-api",
-      "urls": [
-        "https://api.themoviedb.org/3/**"
-      ],
+      "urls": ["https://api.themoviedb.org/3/**"],
       "cacheConfig": {
         "maxSize": 20,
-        "maxAge": "2h",
+        "maxAge": "1d",
         "timeout": "2s",
         "strategy": "performance"
       }

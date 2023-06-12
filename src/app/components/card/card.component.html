@@ -3,9 +3,11 @@
     <h2>Movie Id: {{ result.id }}</h2>
     <div class="matcontent">
       <img
-        src="https://image.tmdb.org/t/p/w500{{result.backdrop_path}}"
+        src="https://image.tmdb.org/t/p/w500{{ result.backdrop_path }}"
         alt="{{ result.backdrop_path }}"
         class="animate__animated animate__bounce animate__shakeX"
+        width="200"
+        height="100"
       />
       <p>Title: {{ result.title }}</p>
     </div>
