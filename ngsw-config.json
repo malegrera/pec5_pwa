@@ -30,15 +30,15 @@
   ],
   "dataGroups": [
     {
-      "name": "images-api",
+      "name": "movies-api",
       "urls": [
-        "https://picsum.photos/**"
+        "https://api.themoviedb.org/3/**"
       ],
       "cacheConfig": {
         "maxSize": 20,
         "maxAge": "2h",
         "timeout": "2s",
-        "strategy": "freshness"
+        "strategy": "performance"
       }
     }
   ]
